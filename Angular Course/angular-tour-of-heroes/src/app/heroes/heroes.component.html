@@ -1,0 +1,10 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> <!-- [class.selected]="hero === selectedHero" is a CSS class selector that sets the class to the value of the expression in brackets if the condition is met -->
+      <span class="badge">{{hero.id}}</span>
+      <span class="name">{{hero.name}}</span>
+    </button>
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!-- [hero] is a property binding that passes the selectedHero object to the hero property of the hero-detail component -->
