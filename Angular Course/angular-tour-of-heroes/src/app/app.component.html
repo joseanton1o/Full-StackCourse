@@ -1,3 +1,7 @@
 <h1>{{title}}</h1>
-<app-heroes></app-heroes> <!-- The HeroesComponent will appear here, this works because the selector of the HeroesComponent is 'app-heroes' -->
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet> <!-- The HeroesComponent will appear here, this works because the selector of the HeroesComponent is 'app-heroes' -->
 <app-messages></app-messages>

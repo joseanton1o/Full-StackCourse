@@ -15,7 +15,6 @@ import { MessageService } from '../message.service'; // Import the MessageServic
 export class HeroesComponent implements OnInit { // If we do not export the class, we cannot use it in other files.
 
   heroes: Hero[] = [];
-  selectedHero?: Hero; // ?: means that the property is optional
 
   constructor(private heroService: HeroService, private messageService: MessageService) { 
 
@@ -30,10 +29,17 @@ export class HeroesComponent implements OnInit { // If we do not export the clas
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
   }
 }
 // A component is basically a class tha controls a view template.
