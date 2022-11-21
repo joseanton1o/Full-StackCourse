@@ -1,1 +1,0 @@
-# José Antonio Pérez Lara
