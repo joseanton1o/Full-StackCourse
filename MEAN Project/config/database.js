@@ -1,4 +1,4 @@
 module.exports = {
-    database: "https://data.mongodb-api.com/app/data-gowsf/endpoint/data/v1",
+    database: "mongodb+srv://jose:jose@mean-authapp.l7rn5vm.mongodb.net/?retryWrites=true&w=majority",
     secret: 'yoursecret'
 }
