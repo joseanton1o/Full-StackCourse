@@ -1,4 +1,4 @@
 module.exports = {
-    database: 'mongodb://localhost:27017/meanauth',
+    database: "https://data.mongodb-api.com/app/data-gowsf/endpoint/data/v1",
     secret: 'yoursecret'
 }
